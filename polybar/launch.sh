@@ -1,9 +1,8 @@
 #!/bin/bash
+TOKEN="redacted"
 
 polybar-msg cmd quit
 
 
-polybar example | tee -a /tmp/polybar-example.log & disown
-export GITHUB_ACCESS_TOKEN
-echo ${GITHUB_ACCESS_TOKEN}
+GITHUB_ACCESS_TOKEN=$TOKEN polybar example | tee -a /tmp/polybar-example.log & disown
 echo "bars launched"
